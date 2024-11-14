@@ -24,11 +24,6 @@ function creazioneCelle() {
 function numeriRandom() {
     const num = Math.floor(Math.random() * 90) + 1;
     let num2 = document.getElementById(`${ num }`);
-    if (num2.classList.contains("highlight")) {
-        numeriRandom();
-    }
-    else{
-        newSpan.innerText = `Il numero estratto è ${ num + 1 }`;
-        num2.classList.add("highlight");
-    };
+    newSpan.innerText = `Il numero estratto è ${ num + 1 }`;
+    num2.classList.add("highlight");
 }
