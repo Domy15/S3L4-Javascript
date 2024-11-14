@@ -12,19 +12,24 @@ function init() {
 btnEstrai.addEventListener("click", numeriRandom);
 
 function creazioneCelle() {
-        for (let i = 0; i < 90; i++) {
-            const celle = document.createElement("div");
-            celle.innerText = i + 1;
-            celle.setAttribute("id", `${i}`);
-            tombolone.appendChild(celle);
-        };
-    }
+    for (let i = 0; i < 90; i++) {
+        const celle = document.createElement("div");
+        celle.innerText = i + 1;
+        celle.setAttribute("id", `${i}`);
+        tombolone.appendChild(celle);
+    };
+}
 
 
 function numeriRandom() {
     const num = Math.floor(Math.random() * 90) + 1;
     let num2 = document.getElementById(`${num}`);
-    console.log(num2);
-    newSpan.innerText = `Il numero estratto è ${num + 1}`;
-    num2.classList.add("highlight");
+    if (num2.classList.contains("highlight")) {
+        numeriRandom();
+    }
+    else{
+        newSpan.innerText = `Il numero estratto è ${ num + 1 }`;
+        num2.classList.add("highlight");
+    }
 }
+
